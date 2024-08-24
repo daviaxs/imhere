@@ -11,11 +11,9 @@ export const styles = StyleSheet.create({
   },
   formContainer: {
     flexDirection: 'row',
-    marginTop: 20,
-    width: '85%',
+    marginTop: 30,
+    width: '100%',
     gap: 10,
-    justifyContent: 'space-between',
-    alignItems: 'flex-end'
   },
   helloText: {
     color: '#fff',
@@ -23,9 +21,8 @@ export const styles = StyleSheet.create({
     fontSize: 24
   },
   input: {
-    marginTop: 10,
     height: 50,
-    width: '100%',
+    flex: 1,
     backgroundColor: "#222222",
     borderRadius: 12,
     color: "#fff",
