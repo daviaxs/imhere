@@ -1,4 +1,4 @@
-import { Text, TextInput, TouchableOpacity, View } from "react-native";
+import { FlatList, ScrollView, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { styles } from "./styles";
 import { useState } from "react";
 import { Participant } from "../../shared/components/participant/Participant";
@@ -35,11 +35,16 @@ export default function Home() {
         </TouchableOpacity>
       </View>
 
-      <View style={styles.participantsContainer}>
-        {participants.map((participants, index) => (
-          <Participant key={index} name={participants} deleteParticipant={() => handleDeleteParticipant(index)} />
-        ))}
-      </View>
+      <FlatList
+        data={participants}
+        keyExtractor={(_, index) => index.toString()}
+        showsVerticalScrollIndicator={false}
+        style={styles.participantsContainer}
+        renderItem={({item, index}) => (
+          <Participant key={item} name={item} deleteParticipant={() => handleDeleteParticipant(index)} />
+
+        )}
+      />
     </View>
   )
 }

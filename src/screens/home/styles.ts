@@ -18,7 +18,6 @@ export const styles = StyleSheet.create({
   participantsContainer: {
     width: '100%',
     marginTop: 30,
-    gap: 10,
   },
   helloText: {
     color: '#fff',

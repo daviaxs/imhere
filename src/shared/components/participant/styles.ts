@@ -9,6 +9,7 @@ export const styles = StyleSheet.create({
     width: '100%',
     overflow: 'hidden',
     alignItems: 'center',
+    marginBottom: 10,
   },
   text: {
     flex: 1,
