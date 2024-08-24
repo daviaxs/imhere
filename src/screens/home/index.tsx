@@ -12,6 +12,11 @@ export default function Home() {
     setName('')
   }
 
+  function handleDeleteParticipant(index: number) {
+    const newParticipants = participants.filter((_, i) => i !== index)
+    setParticipants(newParticipants)
+  }
+
   return (
     <View style={styles.container}>
       <Text style={styles.helloText}>Nome do evento</Text>
@@ -32,7 +37,7 @@ export default function Home() {
 
       <View style={styles.participantsContainer}>
         {participants.map((participants, index) => (
-          <Participant key={index} name={participants} />
+          <Participant key={index} name={participants} deleteParticipant={() => handleDeleteParticipant(index)} />
         ))}
       </View>
     </View>
