@@ -15,6 +15,9 @@ export const styles = StyleSheet.create({
     width: '100%',
     gap: 10,
   },
+  participantsContainer: {
+    width: '100%',
+  },
   helloText: {
     color: '#fff',
     fontWeight: 'bold',
@@ -32,7 +35,7 @@ export const styles = StyleSheet.create({
     height: 50,
     width: 50,
     borderRadius: 12,
-    backgroundColor: "#dd3948",
+    backgroundColor: "#651090",
     justifyContent: 'center',
     alignItems: 'center',
   },
