@@ -17,7 +17,7 @@ export const styles = StyleSheet.create({
   },
   participantsContainer: {
     width: '100%',
-    marginTop: 30,
+    marginVertical: 30
   },
   helloText: {
     color: '#fff',
