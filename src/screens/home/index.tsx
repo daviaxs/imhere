@@ -5,9 +5,11 @@ import { Participant } from "../../shared/components/participant/Participant";
 
 export default function Home() {
   const [name, setName] = useState('')
+  const [participants, setParticipants] = useState<string[]>([])
 
   function handleAddParticipant() {
-    console.log(`Adicionado o participante: ${name}`)
+    setParticipants([name, ...participants])
+    setName('')
   }
 
   return (
@@ -29,7 +31,9 @@ export default function Home() {
       </View>
 
       <View style={styles.participantsContainer}>
-        <Participant />
+        {participants.map((participants, index) => (
+          <Participant key={index} name={participants} />
+        ))}
       </View>
     </View>
   )
