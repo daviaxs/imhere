@@ -61,6 +61,9 @@ export default function Home() {
         keyExtractor={(_, index) => index.toString()}
         showsVerticalScrollIndicator={false}
         style={styles.participantsContainer}
+        ListEmptyComponent={() => (
+          <Text style={{color: '#fff', textAlign: 'center'}}>Nenhum participante cadastrado</Text>
+        )}
         renderItem={({item, index}) => (
           <Participant key={item} name={item} deleteParticipant={() => handleDeleteParticipant({participantName: item, index})} />
 
