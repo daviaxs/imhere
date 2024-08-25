@@ -7,23 +7,23 @@ export default function Home() {
   const [name, setName] = useState('')
   const [participants, setParticipants] = useState<string[]>([])
 
-  function handleAddParticipant(name: string) {
-    if (!name) {
-      Alert.alert("Erro", "Informe o nome do participante")
+  function handleAddParticipant(newParticipantName: string) {
+    if (!newParticipantName) {
+      Alert.alert("Erro", "Informe o nome do participante.")
       return
     }
 
-    if (participants.includes(name)) {
+    if (participants.includes(newParticipantName)) {
       Alert.alert("Erro", "Já existe um participante com esse nome.")
       return
     }
 
-    setParticipants([name, ...participants])
+    setParticipants([newParticipantName, ...participants])
     setName('')
   }
 
-  function handleDeleteParticipant({name, index}: {name: string, index: number}) {
-    Alert.alert("Remover participante", `Deseja remover o participante "${name}"?`, [
+  function handleDeleteParticipant({participantName, index}: {participantName: string, index: number}) {
+    Alert.alert("Remover participante", `Deseja remover o participante "${participantName}"?`, [
       {
         text: "Cancelar",
         style: "cancel"
@@ -62,7 +62,7 @@ export default function Home() {
         showsVerticalScrollIndicator={false}
         style={styles.participantsContainer}
         renderItem={({item, index}) => (
-          <Participant key={item} name={item} deleteParticipant={() => handleDeleteParticipant({name: item, index})} />
+          <Participant key={item} name={item} deleteParticipant={() => handleDeleteParticipant({participantName: item, index})} />
 
         )}
       />
